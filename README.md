@@ -26,6 +26,21 @@ Original Repository: [ryanmcdermott/clean-code-javascript](https://github.com/ry
 最后你需要知道的是，这些东西不会让你立刻变成一个优秀的工程师，长期奉行他们也并不意味着你能够高枕无忧不再犯错。千里之行，始于足下。我们需要时常和同行们进行代码评审，不断优化自己的代码。不要惧怕改善代码质量所需付出的努力，加油。
 
 ## **变量**
+### 命名变量名能描述实际变量的用途
+**反例**:
+```javascript
+var d; // 消逝的时间，以日期
+```
+
+**正例**:
+```javascript
+var elapsedTimeInDays;
+var daysSinceCreation;
+var daysSinceMOdification;
+var fileAgeInDays;
+```
+
+
 ### 使用有意义，可读性好的变量名
 
 **反例**:
@@ -55,6 +70,40 @@ const FIRST_US_PRESIDENT = "George Washington";
 ```
 **[回到目录](#目录)**
 
+### 做有意义的区别，避免误导
+
+避免用集合类别来做变量名称,除非真是该集合的类别
+**反例**:
+```js
+var accountList = [] // 如果真是 List 集合可以使用
+```
+
+**正例**:
+```js
+var accountGroup
+var bunchOfAccounts
+var accounts
+```
+
+要做出清楚的区别，明确的约定
+
+**反例**:
+下面理解上是一样的,没区别的
+
+```js
+getActiveAccount()
+getActiveAccounts()
+getActiveAccountInfo()
+
+var moneyAmount
+var money
+
+var customerInfo
+var customer
+
+var accountData
+var account
+```
 
 ### 对功能类似的变量名采用统一的命名风格
 
