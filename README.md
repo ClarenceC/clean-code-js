@@ -274,6 +274,17 @@ function createMenu(menuConfig) {
 ```
 **[回到目录](#目录)**
 
+### 函数名应该当时动词或者动词短语应该如下 
+
+**正例**
+
+```js
+postPayment()
+deletePage()
+saveName()
+getName()
+```
+
 
 ### 函数功能的单一性
 这是软件功能中最重要的原则之一。
